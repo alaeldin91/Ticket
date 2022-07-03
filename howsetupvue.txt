@@ -1,0 +1,50 @@
+https://www.laravelcode.com/post/laravel-8-crud-operation-with-vuejs'
+https://v3.router.vuejs.org/installation.html#vue-cli setup router-vue
+passwordAdmin:adminhttps://medium.com/@ripoche.b/create-a-spa-with-role-based-authentication-with-laravel-and-vue-js-ac4b260b882f
+Password User :secret
+https://medium.com/@ripoche.b/create-a-spa-with-role-based-authentication-with-laravel-and-vue-js-ac4b260b882f
+/** vue Setup front-side authentication
+To handle authnetication and right access front-side, we will use the package ‘websanova/vue-auth’ as well as several other dependencies: ‘vue-router’, ‘vue-axios’, ‘axios’ and ‘es6-promise’.
+
+Install dependancies with the following command:
+npm install -D vue-loader vue-template-compiler
+
+npm i @websanova/vue-auth vue-router vue-axios axios es6-promise
+https://github.com/websanova/vue-auth/tree/master/dist/drivers/auth
+  example https://shouts.dev/articles/laravel-spa-with-vue3-auth-crud-example
+https://www.laravelcode.com/post/laravel-crud-with-vue-router-and-sweet-alert
+https://medium.com/js-dojo/build-a-simple-blog-with-multiple-image-upload-using-laravel-vue-5517de920796
+https://laravelvuespa.com/authentication/laravel-authentication
+https://sweetalert2.github.io/recipe-gallery/colored-toasts.html
+
+https://sweetalert2.github.io/#usage
+https://jwt-auth.readthedocs.io/en/docs/laravel-installation/
+https://www.laravelcode.com/post/laravel-8-multi-authentication-api-with-example passport
+https://yaminncco.github.io/vue-sidebar-menu/#/page
+npm cache clean --force
+ php artisan storage:link  create storage folder
+
+npm install @vue"*"
+npm i @vue/cli-plugin-vuex
+astkak
+php artisan optimize
+php artisan route:cache
+php artisan view:clear
+php artisan config:cache
+ php artisan route:list
+sweet alert2 
+npm install sweetalert2
+npm i vue-sweetalert2
+npm install vue bootstrap
+flash message npm
+
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+npm uninstall vue-template-compiler
+npm i -D @vue/compiler-sfc
+npm install vue-loader@next
+https://github.com/vuejs/vuex/releases
+https://www.bezkoder.com/vue-3-crud/  example
+https://auth0.com/blog/state-management-in-vue-3-applications/ example state
+npm i jsonwebtoken
+https://medialoot.com/blog/how-to-code-a-homepage-template-with-html5-and-css3/

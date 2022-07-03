@@ -1,0 +1,4 @@
+https://github.com/gabriellopesmarques/web-scraping-php/blob/master/core/DocumentObjectModel.php
+http://talkerscode.com/webtricks/create-your-own-search-engine-using-php-jquery-and-mysql.php
+https://prowebscraper.com/blog/web-scraping-using-php/
+https://github.com/ItsRRM97/Search-Engine
