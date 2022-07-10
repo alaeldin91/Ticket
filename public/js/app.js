@@ -23007,27 +23007,28 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   methods: {
-    logout: function () {
-      var _logout = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+    logoutCustomer: function () {
+      var _logoutCustomer = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _services_auth_service__WEBPACK_IMPORTED_MODULE_0__["default"].logoutCustomer();
+                _services_auth_service__WEBPACK_IMPORTED_MODULE_0__["default"].logoutsCustomer();
+                this.$router.push('/loginCustomer');
 
-              case 1:
+              case 2:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, this);
       }));
 
-      function logout() {
-        return _logout.apply(this, arguments);
+      function logoutCustomer() {
+        return _logoutCustomer.apply(this, arguments);
       }
 
-      return logout;
+      return logoutCustomer;
     }()
   }
 });
@@ -23186,7 +23187,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("header", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": "dropdown-item",
     onClick: _cache[0] || (_cache[0] = function () {
-      return _ctx.logoutCustomer && _ctx.logoutCustomer.apply(_ctx, arguments);
+      return $options.logoutCustomer && $options.logoutCustomer.apply($options, arguments);
     })
   }, _hoisted_12)])])])])])]);
 }
@@ -23353,7 +23354,7 @@ __webpack_require__.r(__webpack_exports__);
 
     return (0,_api_auth__WEBPACK_IMPORTED_MODULE_0__["default"])().post("api/auth/loginCustomer", user).then(function (response) {
       if (response.status === 200) {
-        _this.setTokenCustomer(response.dat);
+        _this.setTokenCustomer(response.data);
       }
 
       return response.data;
@@ -23374,6 +23375,10 @@ __webpack_require__.r(__webpack_exports__);
     } else {
       return token.access_token;
     }
+  },
+  logoutsCustomer: function logoutsCustomer() {
+    (0,_api_auth__WEBPACK_IMPORTED_MODULE_0__["default"])().get('api/logoutCustomer');
+    localStorage.removeItem('ticket_token');
   }
 });
 

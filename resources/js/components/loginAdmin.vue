@@ -31,6 +31,8 @@
                   id="email"
                   type="email"
                   class="form-control"
+                  placeholder="please enter your email"
+                  v-model="user.email"
                  
                 />
                 <i class="ik ik-user"></i>
@@ -41,6 +43,8 @@
                   id="password"
                   type="password"
                   class="form-control"
+                  placeholder="please enter your password"
+                  v-model="user.password"
           
                 />
                 <i class="ik ik-lock"></i>
@@ -54,6 +58,7 @@
                       id="item_checkbox"
                       name="item_checkbox"
                       value="option1"
+                      v-model="user.rember_me"
                     />
                     <span class="custom-control-label">&nbsp;Remember Me</span>
                   </label>
@@ -77,7 +82,17 @@
 
 
 export default {
-    
+    data(){
+      return{
+        user:{
+          email:'',
+          password: '',
+          rember_me:''
+
+        }
+
+      }
+    }
 
  
 };

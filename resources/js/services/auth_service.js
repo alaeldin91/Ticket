@@ -4,7 +4,7 @@ export default {
     loginCustomer(user) {
         return api().post("api/auth/loginCustomer", user).then(response => {
             if (response.status === 200) {
-                this.setTokenCustomer(response.dat);
+                this.setTokenCustomer(response.data);
             }
             return response.data
         })
@@ -26,4 +26,11 @@ export default {
             return token.access_token;
         }
     },
+    logoutsCustomer(){
+        api().get('api/logoutCustomer')
+        localStorage.removeItem('ticket_token')
+
+    }
+
+
 }

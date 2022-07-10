@@ -38,8 +38,9 @@
 import Auth from './../services/auth_service';
 export default {
 methods:{
-  logout:async  function(){
-    Auth.logoutCustomer();
+  logoutCustomer:async  function(){
+    Auth.logoutsCustomer();
+    this.$router.push('/loginCustomer');
   }
 
 }
