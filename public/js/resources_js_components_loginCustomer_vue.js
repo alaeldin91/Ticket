@@ -63,14 +63,44 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 4:
                 response = _context.sent;
                 this.$router.push("/home/CustomerTicket");
-                _context.next = 10;
+                _context.next = 23;
                 break;
 
               case 8:
                 _context.prev = 8;
                 _context.t0 = _context["catch"](1);
+                console.log(_context.t0);
+                _context.t1 = _context.t0.response.status;
+                _context.next = _context.t1 === 422 ? 14 : _context.t1 === 401 ? 16 : _context.t1 === 500 ? 18 : 21;
+                break;
 
-              case 10:
+              case 14:
+                this.Validations.setMessage(_context.t0.response.data.errors);
+                return _context.abrupt("break", 23);
+
+              case 16:
+                Toast.fire({
+                  icon: "error",
+                  title: _context.t0.response.data.message
+                });
+                return _context.abrupt("break", 23);
+
+              case 18:
+                this.Validations.setMessage(_context.t0.response.data.errors);
+                Toast.fire({
+                  icon: "error",
+                  title: "error occurred please try again"
+                });
+                return _context.abrupt("break", 23);
+
+              case 21:
+                this.Validations.setMessage(_context.t0.response.data.errors);
+                Toast.fire({
+                  icon: "error",
+                  title: _context.t0.response.data.message
+                });
+
+              case 23:
               case "end":
                 return _context.stop();
             }
@@ -84,7 +114,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       return login;
     }()
-  }
+  },
+  created: function created() {}
 });
 
 /***/ }),
@@ -104,12 +135,158 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "auth-wrapper"
 };
+var _hoisted_2 = {
+  "class": "container-fluid h-100"
+};
+var _hoisted_3 = {
+  "class": "row flex-row h-100 bg-white"
+};
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container-fluid h-100\"><div class=\"row flex-row h-100 bg-white\"><div class=\"col-xl-8 col-lg-6 col-md-5 p-0 d-md-block d-lg-block d-sm-none d-none\"><div class=\"lavalite-bg\"><div class=\"lavalite-overlay\"><img src=\"/img/login-bg.jpg\" alt=\"\"></div></div></div><div class=\"col-xl-4 col-lg-6 col-md-7 my-auto p-0\"><div class=\"authentication-form mx-auto\"><div class=\"logo-centered\"><a href=\"\"><img src=\"/img/AboHanna.png\" alt=\"\" class=\"avatar\"></a></div><h3>Sign In to Customer</h3><p>Happy to see you again!</p><form><div class=\"form-group\"><input id=\"email\" type=\"email\" class=\"form-control\"><i class=\"ik ik-user\"></i></div><div class=\"form-group\"><input id=\"password\" type=\"password\" class=\"form-control\"><i class=\"ik ik-lock\"></i></div><div class=\"row\"><div class=\"col text-left\"><label class=\"custom-control custom-checkbox\"><input type=\"checkbox\" class=\"custom-control-input\" id=\"item_checkbox\" name=\"item_checkbox\" value=\"option1\"><span class=\"custom-control-label\"> Remember Me</span></label></div></div><div class=\"sign-btn text-center\"><button type=\"submit\" class=\"btn btn-primary btn-sm ml-auto\"> Login </button></div></form></div></div></div></div>", 1);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-xl-8 col-lg-6 col-md-5 p-0 d-md-block d-lg-block d-sm-none d-none"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "lavalite-bg"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "lavalite-overlay"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/img/login-bg.jpg",
+  alt: ""
+})])])], -1
+/* HOISTED */
+);
 
-var _hoisted_3 = [_hoisted_2];
+var _hoisted_5 = {
+  "class": "col-xl-4 col-lg-6 col-md-7 my-auto p-0"
+};
+var _hoisted_6 = {
+  "class": "authentication-form mx-auto"
+};
+
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "logo-centered"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: ""
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/img/AboHanna.png",
+  alt: "",
+  "class": "avatar"
+})])], -1
+/* HOISTED */
+);
+
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Sign In to Customer", -1
+/* HOISTED */
+);
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Happy to see you again!", -1
+/* HOISTED */
+);
+
+var _hoisted_10 = {
+  "class": "form-group"
+};
+var _hoisted_11 = ["textContent"];
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "ik ik-user"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_13 = {
+  "class": "form-group"
+};
+var _hoisted_14 = ["textContent"];
+
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "ik ik-lock"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_16 = {
+  "class": "row"
+};
+var _hoisted_17 = {
+  "class": "col text-left"
+};
+var _hoisted_18 = {
+  "class": "custom-control custom-checkbox"
+};
+
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "custom-control-label"
+}, " Remember Me", -1
+/* HOISTED */
+);
+
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sign-btn text-center"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "submit",
+  "class": "btn btn-primary btn-sm ml-auto",
+  style: {
+    "text-align": "center"
+  }
+}, " Login ")], -1
+/* HOISTED */
+);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, _hoisted_8, _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+    onSubmit: _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return $options.login && $options.login.apply($options, arguments);
+    }, ["prevent"]))
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": "text-danger error",
+    textContent: (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.Validations.getMessage('email')),
+    style: {
+      "text-align": "center"
+    }
+  }, null, 8
+  /* PROPS */
+  , _hoisted_11), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    id: "email",
+    type: "email",
+    "class": "form-control",
+    placeholder: "please enter your Email",
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.user.email = $event;
+    }),
+    style: {
+      "text-align": "center"
+    }
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.user.email]]), _hoisted_12]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": "text-danger error",
+    textContent: (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.Validations.getMessage('password'))
+  }, null, 8
+  /* PROPS */
+  , _hoisted_14), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    id: "password",
+    type: "password",
+    "class": "form-control",
+    placeholder: "please enter your password",
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return $data.user.password = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.user.password]]), _hoisted_15]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "checkbox",
+    "class": "custom-control-input",
+    id: "item_checkbox",
+    name: "item_checkbox",
+    value: "option1",
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+      return $data.user.rember_me = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.user.rember_me]]), _hoisted_19])])]), _hoisted_20], 32
+  /* HYDRATE_EVENTS */
+  )])])])])]);
 }
 
 /***/ }),

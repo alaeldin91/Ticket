@@ -24,13 +24,16 @@
             </div>
             <h3>Sign In to Customer</h3>
             <p>Happy to see you again!</p>
-            <form>
+            <form @submit.prevent="login">
               <div class="form-group">
-                <input id="email" type="email" class="form-control" />
+                <span class="text-danger error" v-text="Validations.getMessage('email')" style="text-align:center;">
+                </span>
+                <input id="email" type="email" class="form-control"  placeholder="please enter your Email" v-model="user.email" style="text-align:center"/>
                 <i class="ik ik-user"></i>
               </div>
               <div class="form-group">
-                <input id="password" type="password" class="form-control" />
+                <span class="text-danger error" v-text ="Validations.getMessage('password')"> </span>
+                <input id="password" type="password" class="form-control" placeholder="please enter your password" v-model="user.password"/>
                 <i class="ik ik-lock"></i>
               </div>
               <div class="row">
@@ -42,13 +45,14 @@
                       id="item_checkbox"
                       name="item_checkbox"
                       value="option1"
+                      v-model="user.rember_me"
                     />
                     <span class="custom-control-label">&nbsp;Remember Me</span>
                   </label>
                 </div>
               </div>
               <div class="sign-btn text-center">
-                <button type="submit" class="btn btn-primary btn-sm ml-auto">
+                <button type="submit" class="btn btn-primary btn-sm ml-auto" style="text-align:center">
                   Login
                 </button>
               </div>
@@ -94,10 +98,35 @@ export default {
         const response = await Auth_services.loginCustomer(this.user);
         this.$router.push("/home/CustomerTicket");
       } catch (error) {
-        
+        console.log(error);
+        switch (error.response.status) {
+          case 422:
+            this.Validations.setMessage(error.response.data.errors);
+            break;
+          case 401:
+            Toast.fire({
+              icon: "error",
+              title: error.response.data.message,
+            });
+            break;
+          case 500:
+            this.Validations.setMessage(error.response.data.errors);
+            Toast.fire({
+              icon: "error",
+              title: "error occurred please try again",
+            });
+            break;
+          default:
+            this.Validations.setMessage(error.response.data.errors);
+            Toast.fire({
+              icon: "error",
+              title: error.response.data.message,
+            });
+        }
       }
     },
   },
+  created() {},
 };
 </script>
 

@@ -23,7 +23,7 @@
               <a class="dropdown-item" href="#"
                 ><i class="ik ik-user dropdown-icon"></i> Profile</a
               >
-              <button class="dropdown-item" v-on:click="logout">
+              <button class="dropdown-item" v-on:click="logoutCustomer">
                 <i class="ik ik-power dropdown-icon"></i>
                 Logout
               </button>
@@ -35,5 +35,15 @@
   </header>
 </template>
 <script>
-export default {};
+import Auth from './../services/auth_service';
+export default {
+methods:{
+  logout:async  function(){
+    Auth.logoutCustomer();
+  }
+
+}
+
+
+};
 </script>

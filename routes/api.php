@@ -24,3 +24,6 @@ Route::post('register',[AuthnicationController::class,'registerCustomer']);
 Route::post('loginAdmin',[AuthnicationController::class,'loginAdmin']);
 Route::post('loginCustomer',[AuthnicationController::class,'loginCustomer']);
 });
+Route::group(['middleware'=>'auth:api'],function(){
+    Route::get('logout',[AuthnicationController::class],'logout');
+});
