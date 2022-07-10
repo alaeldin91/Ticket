@@ -84,7 +84,8 @@ class AuthnicationController extends Controller
         }
     }
     public function logoutCustomer(Request $request){
-        $request->user()->revoke();
+        $request->user()->token()->revoke();
+
         return response()->json(['message'=>'Logout Successfully','status_code'=>200],200);
     }
 }
