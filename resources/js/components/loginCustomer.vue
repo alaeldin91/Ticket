@@ -11,7 +11,7 @@
         >
           <div class="lavalite-bg">
             <div class="lavalite-overlay">
-                <img src="/img/login-bg.jpg" alt="">
+              <img src="/img/login-bg.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -22,27 +22,15 @@
                 ><img src="/img/AboHanna.png" alt="" class="avatar"
               /></a>
             </div>
-            <h3>  Sign In to Customer</h3>
+            <h3>Sign In to Customer</h3>
             <p>Happy to see you again!</p>
             <form>
               <div class="form-group">
-             
-                <input
-                  id="email"
-                  type="email"
-                  class="form-control"
-                 
-                />
+                <input id="email" type="email" class="form-control" />
                 <i class="ik ik-user"></i>
               </div>
               <div class="form-group">
-              
-                <input
-                  id="password"
-                  type="password"
-                  class="form-control"
-          
-                />
+                <input id="password" type="password" class="form-control" />
                 <i class="ik ik-lock"></i>
               </div>
               <div class="row">
@@ -58,7 +46,6 @@
                     <span class="custom-control-label">&nbsp;Remember Me</span>
                   </label>
                 </div>
-              
               </div>
               <div class="sign-btn text-center">
                 <button type="submit" class="btn btn-primary btn-sm ml-auto">
@@ -74,56 +61,51 @@
 </template>
 
 <script>
-
-import Validation from './../utils/Validation.js'
-
+import Validation from "./../utils/Validation.js";
+import Auth_services from "./../services/auth_service";
 export default {
- data(){
-   return{
-user:{
-  email:'',
-  password:'',
-  rember_me:false,
-},
-Validations : new Validation()
-};
-
- },
- components:{
-   Validation
-
- },
- methods:{
-login: async function(){
-
-  const Toast = this.$swal.mixin({
-    toast:true,
-    position:"top-right",
-    iconColor:"blue",
-    customerClass:{
-      popup:"colored-toast",
+  data() {
+    return {
+      user: {
+        email: "",
+        password: "",
+        rember_me: false,
+      },
+      Validations: new Validation(),
+    };
+  },
+  components: {
+    Validation,
+  },
+  methods: {
+    login: async function () {
+      const Toast = this.$swal.mixin({
+        toast: true,
+        position: "top-right",
+        iconColor: "blue",
+        customerClass: {
+          popup: "colored-toast",
+        },
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
+      });
+      try {
+        const response = await Auth_services.loginCustomer(this.user);
+        this.$router.push("/home/CustomerTicket");
+      } catch (error) {
+        
+      }
     },
-    showConfirmButton:false,
-    timer:1500,
-    timerProgressBar:true,
-  });
-  try{
-
-  }
-  catch(error){
-
-  }
-
-}
- }
+  },
 };
 </script>
 
 <style>
 h3 {
-    text-align: center;
+  text-align: center;
 }
 p {
-    text-align: center;
+  text-align: center;
 }
 </style>

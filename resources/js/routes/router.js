@@ -1,12 +1,13 @@
 import {createWebHistory,createRouter} from 'vue-router'
 
 import Home from '../components/HomeTicket.vue';
+import Auth from '../services/auth_service';
 const routes = [{
     path:'/home',
     component:Home,
     children:[{
         path:'/home/CustomerTicket',
-        name:'dashboard',
+        name:'home',
          component: () => import('../components/CustomerTicket.vue')
     
     },
@@ -18,6 +19,14 @@ const routes = [{
     
 
     ],
+    beforeEnter: (to, from, next) => {
+        if(!Auth.isLoginCustomer()){
+            next('loginCustomer')
+        }
+        else{
+         next()
+        }
+    }
     
     
 },

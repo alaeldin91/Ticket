@@ -4,16 +4,16 @@ export default {
     loginCustomer(user) {
         return api().post("api/auth/loginCustomer", user).then(response => {
             if (response.status === 200) {
-                this.setToken(response.dat);
+                this.setTokenCustomer(response.dat);
             }
             return response.data
         })
     },
-    setToken(user) {
+    setTokenCustomer(user) {
         localStorage.setItem('ticket_token', JSON.stringify(user))
 
     },
-    isLogin() {
+    isLoginCustomer() {
         const token = localStorage.getItem('ticket_token');
         return token != null
     },
