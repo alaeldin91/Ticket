@@ -19,11 +19,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['prefix' => 'auth'],function(){
-Route::post('register',[AuthnicationController::class,'registerCustomer']);
-Route::post('loginAdmin',[AuthnicationController::class,'loginAdmin']);
-Route::post('loginCustomer',[AuthnicationController::class,'loginCustomer']);
+Route::group(['prefix' => 'auth'], function () {
+    Route::post('register', [AuthnicationController::class, 'registerCustomer']);
+    Route::post('loginAdmin', [AuthnicationController::class, 'loginAdmin']);
+    Route::post('loginCustomer', [AuthnicationController::class, 'loginCustomer']);
 });
-Route::group(['middleware'=>'auth:api'],function(){
-    Route::get('logout',[AuthnicationController::class],'logout');
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::get('logout', [AuthnicationController::class], 'logoutCustomer');
 });
