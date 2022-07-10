@@ -5,9 +5,9 @@ const routes = [{
     path:'/home',
     component:Home,
     children:[{
-        path:'/home/dashboard',
+        path:'/home/CustomerTicket',
         name:'dashboard',
-         component: () => import('../components/dashboard.vue')
+         component: () => import('../components/CustomerTicket.vue')
     
     },
     {
@@ -19,17 +19,20 @@ const routes = [{
 
     ],
     
+    
+},
+
+{
+    path:'/loginAdmin',
+    name:'loginAdmin',
+    component:()=>import('../components/AdminTicket')
 },
 {
     path:'/loginCustomer',
     name:'loginCustomer',
     component:()=>import('../components/loginCustomer.vue')
 },
-{
-    path:'/loginAdmin',
-    name:'loginAdmin',
-    component:()=>import('../components/loginAdmin.vue')
-},
+
 
 
 ]

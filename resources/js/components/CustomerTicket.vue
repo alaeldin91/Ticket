@@ -2,51 +2,45 @@
   <div class="container-fluid">
     <div class="page-header">
       <div class="row align-items-end">
-        <div class="col-lg-8">
-         
-        </div>
-    
-    
-    <div class="row">
-      <div class="all-button-box row d-flex justify-content-end">
-        <div class="col-auto my-custom">
-          <button
-            type="button"
-            class="btn btn-primary btn-sm ml-auto"
-            data-toggle="modal"
-            data-target="#UserModal"
-            data-title="Create New Admin">
-            <i class="fa fa-plus"></i>
-            Create
-          </button>
+        <div class="col-lg-8"></div>
+
+        <div class="row">
+          <div class="all-button-box row d-flex justify-content-end">
+            <div class="col-auto my-custom">
+              <button
+                type="button"
+                class="btn btn-primary btn-sm ml-auto"
+                data-toggle="modal"
+                data-target="#UserModal"
+                data-title="Create New Admin"
+              >
+                <i class="fa fa-plus"></i>
+                Create
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-     </div>
-    </div>
-      <div class="col-xl-10 col-md-6">
-        <div class="card card-table">
-          <div class="card-header">
-            <h3>Ticket</h3>
-          </div>
-    
-          <div class="card-body">
-            <table id="user_table" class="table" >
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Image Profile</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-               
-              </tbody>
-            </table>
-          </div>
+    <div class="col-xl-10 col-md-6">
+      <div class="card card-table">
+        <div class="card-header">
+          <h3>Ticket</h3>
         </div>
-      
+        <div class="card-body">
+          <table id="user_table" class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Image Profile</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
     </div>
     <!-- Modal containing dynamic form for adding/updating user details. -->
     <div
@@ -82,7 +76,6 @@
             <div class="modal-body">
               <div class="card bg-none card-box">
                 <div class="form-group">
-              
                   <input
                     type="text"
                     name="name"
@@ -100,8 +93,6 @@
                 </div>
 
                 <div class="form-group">
-                 
-
                   <input
                     type="password"
                     name="password"
@@ -111,23 +102,19 @@
                 </div>
 
                 <div class="form-group">
-                 
                   <input
                     type="password"
                     name="password_confirmation"
                     placeholder="Confirmed password"
                     class="form-control"
-                  
                   />
                 </div>
-               
               </div>
               <div class="text-right">
                 <button
                   type="button"
                   class="btn btn-warning btn-sm ml-auto"
                   data-dismiss="modal"
-                
                 >
                   Close
                 </button>
@@ -145,7 +132,7 @@
 </template>
 
 <style>
-.col-xl-10 col-md-6{
-    margin-top: 20px;
+.col-xl-10 col-md-6 {
+  margin-top: 20px;
 }
 </style>

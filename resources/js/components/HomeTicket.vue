@@ -17,7 +17,7 @@
 
 <script>
     import Headers from './../include/headers'
-    import Footers from './../include/footers.vue'
+    import Footers from '../include/footers.vue'
 
 
 export default {

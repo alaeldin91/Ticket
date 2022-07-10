@@ -75,9 +75,47 @@
 
 <script>
 
+import Validation from './../utils/Validation.js'
 
 export default {
- 
+ data(){
+   return{
+user:{
+  email:'',
+  password:'',
+  rember_me:false,
+},
+Validations : new Validation()
+};
+
+ },
+ components:{
+   Validation
+
+ },
+ methods:{
+login: async function(){
+
+  const Toast = this.$swal.mixin({
+    toast:true,
+    position:"top-right",
+    iconColor:"blue",
+    customerClass:{
+      popup:"colored-toast",
+    },
+    showConfirmButton:false,
+    timer:1500,
+    timerProgressBar:true,
+  });
+  try{
+
+  }
+  catch(error){
+
+  }
+
+}
+ }
 };
 </script>
 
