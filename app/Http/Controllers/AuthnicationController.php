@@ -83,9 +83,15 @@ class AuthnicationController extends Controller
             return response()->json(['message' => 'some error please try again', 'status_code' => 500], 500);
         }
     }
-    public function logoutCustomer(Request $request){
+    public function logoutCustomer(Request $request)
+    {
         $request->user()->token()->revoke();
 
-        return response()->json(['message'=>'Logout Successfully','status_code'=>200],200);
+        return response()->json(['message' => 'Logout Successfully', 'status_code' => 200], 200);
+    }
+    public function logoutAdmin(Request $request)
+    {
+            $request->user->token()->revoke();
+            return response()->json(['message'=>'Logout Successfully','status_code'=>200],200);
     }
 }

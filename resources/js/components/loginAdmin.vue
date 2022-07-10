@@ -11,7 +11,7 @@
         >
           <div class="lavalite-bg">
             <div class="lavalite-overlay">
-                <img src="/img/login-bg.jpg" alt="">
+              <img src="/img/login-bg.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -22,30 +22,26 @@
                 ><img src="/img/AboHanna.png" alt="" class="avatar"
               /></a>
             </div>
-            <h3>  Sign In to Admin</h3>
+            <h3>Sign In to Admin</h3>
             <p>Happy to see you again!</p>
-            <form>
+            <form @submit.prevent="loginAdmin">
               <div class="form-group">
-             
                 <input
                   id="email"
                   type="email"
                   class="form-control"
                   placeholder="please enter your email"
                   v-model="user.email"
-                 
                 />
                 <i class="ik ik-user"></i>
               </div>
               <div class="form-group">
-              
                 <input
                   id="password"
                   type="password"
                   class="form-control"
                   placeholder="please enter your password"
                   v-model="user.password"
-          
                 />
                 <i class="ik ik-lock"></i>
               </div>
@@ -63,7 +59,6 @@
                     <span class="custom-control-label">&nbsp;Remember Me</span>
                   </label>
                 </div>
-              
               </div>
               <div class="sign-btn text-center">
                 <button type="submit" class="btn btn-primary btn-sm ml-auto">
@@ -80,7 +75,7 @@
 
 <script>
 
-
+import Validation from './../utils/Validation'
 export default {
     data(){
       return{
@@ -89,8 +84,32 @@ export default {
           password: '',
           rember_me:''
 
-        }
+        },
+        Validations = new Validation()
 
+      }
+    },
+    components:{
+      Validation
+    },
+    methods:{
+      loginAdmin: async function(){
+        const Toast = this.$swal.mixin({
+    Toast:true,
+    position: "top-right",
+    iconColor:"blue",
+    customerClass:{
+      popup: "colored-toast"
+    },
+    showConfirmButton:false,
+    timer:1500,
+    timerProgressBar:true,
+        });
+        try{
+        }
+        catch(error){
+
+        }
       }
     }
 
@@ -100,9 +119,9 @@ export default {
 
 <style>
 h3 {
-    text-align: center;
+  text-align: center;
 }
 p {
-    text-align: center;
+  text-align: center;
 }
 </style>
